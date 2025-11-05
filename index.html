@@ -16,8 +16,8 @@
       --card: #fff;
       --nav: rgba(17, 17, 17, 0.9);
       --hero-gradient: linear-gradient(120deg, #00bcd4, #0077ff);
-      --grid-line: rgba(209, 209, 209, 0.041);
-      --grid-sub-line: rgba(216, 216, 216, 0.034);
+      --grid-line: rgba(0, 0, 0, 0.020);
+      --grid-sub-line: rgba(0, 0, 0, 0.01);
     }
 
     body.dark {
@@ -45,19 +45,21 @@
       transition: background 0.5s, color 0.5s;
       line-height: 1.6;
 
-      /* Softer, faded graph paper pattern */
+      /* Graph paper grid background */
       background-image:
         linear-gradient(var(--grid-line) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
         linear-gradient(var(--grid-sub-line) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid-sub-line) 1px, transparent 1px);
       background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
+      background-attachment: fixed;
+      background-position: 0 0;
     }
 
     h1, h2, h3, h4, h5 {
       font-family: "Inter", sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
     }
 
     header {
@@ -79,7 +81,7 @@
     }
 
     .logo {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       font-weight: 700;
       color: #fff;
       font-family: "Inter", sans-serif;
@@ -129,7 +131,7 @@
       cursor: pointer;
     }
 
-    /* Hero */
+    /* Hero Section */
     .hero {
       height: 100vh;
       display: flex;
@@ -246,11 +248,6 @@
       padding: 20px;
     }
 
-    .project-info h3 {
-      font-family: "Inter", sans-serif;
-      margin-bottom: 10px;
-    }
-
     .contact-form {
       max-width: 500px;
       margin: 40px auto 0;
@@ -307,10 +304,10 @@
     <nav class="navbar">
       <h1 class="logo">Dev<span>Portfolio</span></h1>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
       </ul>
       <div class="theme-toggle" id="theme-toggle" title="Toggle Dark/Light Mode">🌙</div>
       <div class="menu-toggle" id="menu-toggle">&#9776;</div>
@@ -326,10 +323,10 @@
     </div>
   </section>
 
-  <section id="about" class="about">
+  <section id="about">
     <h2>About Me</h2>
     <div class="about-content">
-      <img src="https://via.placeholder.com/300x300" alt="Profile Photo" />
+      <!-- <img src="https://via.placeholder.com/300x300" alt="Profile Photo" /> -->
       <div class="about-text">
         <p>I’m a web developer focused on building performant, responsive, and user-friendly digital experiences.</p>
         <p>Proficient in <strong>HTML, CSS, JavaScript, React, and Node.js</strong>, I deliver maintainable code and elegant solutions.</p>
@@ -337,25 +334,25 @@
     </div>
   </section>
 
-  <section id="projects" class="projects">
+  <section id="projects">
     <h2>Featured Projects</h2>
     <div class="project-grid">
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x250" alt="Project 1" />
+        <!-- <img src="https://via.placeholder.com/400x250" alt="Project 1" /> -->
         <div class="project-info">
           <h3>Portfolio Website</h3>
           <p>Responsive portfolio with animations, dark/light mode, and clean design.</p>
         </div>
       </div>
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x250" alt="Project 2" />
+        <!-- <img src="https://via.placeholder.com/400x250" alt="Project 2" /> -->
         <div class="project-info">
           <h3>Web App Dashboard</h3>
           <p>Admin panel using APIs, charts, and modern UX principles.</p>
         </div>
       </div>
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x250" alt="Project 3" />
+        <!-- <img src="https://via.placeholder.com/400x250" alt="Project 3" /> -->
         <div class="project-info">
           <h3>React Landing Page</h3>
           <p>Modern landing page with component-based architecture and reusable UI.</p>
@@ -364,7 +361,7 @@
     </div>
   </section>
 
-  <section id="contact" class="contact">
+  <section id="contact">
     <h2>Let’s Connect</h2>
     <form class="contact-form">
       <input type="text" placeholder="Your Name" required />
@@ -379,10 +376,12 @@
   </footer>
 
   <script>
+    // Mobile nav toggle
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
 
+    // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', e => {
         e.preventDefault();
@@ -391,11 +390,13 @@
       });
     });
 
+    // Contact form
     document.querySelector('.contact-form').addEventListener('submit', e => {
       e.preventDefault();
       alert('Message sent successfully!');
     });
 
+    // Dark/Light Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     if (localStorage.getItem('theme') === 'dark') {
@@ -407,6 +408,12 @@
       const isDark = body.classList.contains('dark');
       themeToggle.textContent = isDark ? '☀️' : '🌙';
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // Vertical parallax grid effect
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY * 0.02;
+      document.body.style.backgroundPosition = `0 ${scrollY}px, 0 ${scrollY}px, 0 ${scrollY}px, 0 ${scrollY}px`;
     });
   </script>
 </body>
