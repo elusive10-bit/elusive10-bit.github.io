@@ -5,18 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Name | Web Developer</title>
 
+  <script src="https://kit.fontawesome.com/5da508da44.js" crossorigin="anonymous"></script>
   <!-- Professional Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #00bcd4;
+      --primary: #0bdcf8;
       --bg: #f5f6f7;
-      --text: #222;
+      --text: #252222;
       --card: #fff;
       --nav: rgba(17, 17, 17, 0.9);
       --hero-gradient: linear-gradient(120deg, #00bcd4, #0077ff);
-      --grid-line: rgba(0, 0, 0, 0.020);
+      --grid-line: rgba(0, 0, 0, 0.005);
       --grid-sub-line: rgba(0, 0, 0, 0.01);
     }
 
@@ -157,7 +158,7 @@
 
     .hero-content h2 {
       font-size: 2.6rem;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .hero-content span {
@@ -166,14 +167,14 @@
 
     .hero-content p {
       font-size: 1.1rem;
-      margin-bottom: 25px;
+      margin-bottom: 35px;
     }
 
     .btn {
       background: #fff;
       color: var(--primary);
       padding: 12px 24px;
-      border-radius: 50px;
+      border-radius: 20px;
       text-decoration: none;
       transition: all 0.3s ease;
       font-weight: 600;
@@ -193,7 +194,7 @@
     section h2 {
       text-align: center;
       margin-bottom: 50px;
-      font-size: 2rem;
+      font-size: 2.4rem;
     }
 
     .about-content {
@@ -216,7 +217,7 @@
 
     .about-text {
       max-width: 520px;
-      font-size: 1.05rem;
+      font-size: 1.2rem;
     }
 
     .project-grid {
@@ -250,8 +251,9 @@
 
     .contact-form {
       max-width: 500px;
-      margin: 40px auto 0;
+      margin: 50px auto 0;
       display: flex;
+      justify-content: left;
       flex-direction: column;
       gap: 10px;
     }
@@ -264,15 +266,35 @@
       background: var(--card);
       color: var(--text);
       font-family: "Source Sans Pro", sans-serif;
+      margin-bottom: 10px;
     }
 
     footer {
-      text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: baseline;
+      /* text-align: center; */
       background: var(--nav);
       color: #fff;
-      padding: 25px 0;
+      padding: 25px 30px;
       font-size: 0.95rem;
       letter-spacing: 0.2px;
+    }
+
+    footer .contact-details {
+      display: flex row;
+      align-items: baseline;
+    }
+
+    .contact-details span {
+      margin-right: 1.2em;
+    }
+
+    .copy {
+      display: flex;
+      flex-direction: row;
+      justify-content: right;
+      align-items: end;
     }
 
     @media (max-width: 768px) {
@@ -317,7 +339,7 @@
   <section id="home" class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h2>Hello, I'm <span>Your Name</span></h2>
+      <h2>Hello, I'm <span>ELISHA JAMES S. PARAGAS</span></h2>
       <p>Creative Web Developer crafting modern and scalable web experiences.</p>
       <a href="#projects" class="btn">Explore My Work</a>
     </div>
@@ -370,9 +392,14 @@
       <button type="submit" class="btn">Send Message</button>
     </form>
   </section>
-
   <footer>
-    <p>© 2025 Your Name | Designed & Coded with 💙</p>
+    <div class="contact-details">
+      <span><i class="fa-solid fa-envelope"></i> elishaparagasw@gmail.com</span>
+      <span><i class="fa-solid fa-phone"></i> +63 960 427 3418</span>
+      <span><i class="fa-brands fa-square-linkedin"></i>www.linkedin.com/in/elishajamesparagas</span>
+    </div>
+
+    <p class="copy">© 2025 Elisha James S. Paragas | Designed & Coded with 💙</p>
   </footer>
 
   <script>
