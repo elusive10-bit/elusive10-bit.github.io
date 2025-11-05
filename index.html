@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Name | Web Developer</title>
+  <!-- Professional Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #00bcd4;
@@ -30,14 +32,20 @@
     }
 
     body {
-      font-family: "Poppins", sans-serif;
+      font-family: "Source Sans Pro", sans-serif;
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
       transition: background 0.5s, color 0.5s;
-      /* Paper-like texture */
       background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
       background-size: 20px 20px;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
 
     header {
@@ -62,6 +70,7 @@
       font-size: 1.6rem;
       font-weight: 700;
       color: #fff;
+      font-family: "Inter", sans-serif;
     }
 
     .logo span {
@@ -80,6 +89,7 @@
     .nav-links a {
       color: #fff;
       text-decoration: none;
+      font-weight: 500;
       transition: color 0.3s;
     }
 
@@ -132,7 +142,7 @@
     }
 
     .hero-content h2 {
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       margin-bottom: 15px;
     }
 
@@ -141,8 +151,8 @@
     }
 
     .hero-content p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
     }
 
     .btn {
@@ -153,6 +163,8 @@
       text-decoration: none;
       transition: all 0.3s ease;
       font-weight: 600;
+      font-family: "Inter", sans-serif;
+      letter-spacing: 0.3px;
     }
 
     .btn:hover {
@@ -164,11 +176,17 @@
       padding: 100px 10%;
     }
 
+    section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2rem;
+    }
+
     .about-content {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
+      gap: 40px;
       align-items: center;
     }
 
@@ -183,7 +201,8 @@
     }
 
     .about-text {
-      max-width: 500px;
+      max-width: 520px;
+      font-size: 1.05rem;
     }
 
     .project-grid {
@@ -215,6 +234,11 @@
       padding: 20px;
     }
 
+    .project-info h3 {
+      font-family: "Inter", sans-serif;
+      margin-bottom: 10px;
+    }
+
     .contact-form {
       max-width: 500px;
       margin: 40px auto 0;
@@ -230,6 +254,7 @@
       border-radius: 10px;
       background: var(--card);
       color: var(--text);
+      font-family: "Source Sans Pro", sans-serif;
     }
 
     footer {
@@ -237,6 +262,8 @@
       background: var(--nav);
       color: #fff;
       padding: 25px 0;
+      font-size: 0.95rem;
+      letter-spacing: 0.2px;
     }
 
     @media (max-width: 768px) {
@@ -281,7 +308,7 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h2>Hello, I'm <span>Your Name</span></h2>
-      <p>Creative Web Developer crafting modern web experiences.</p>
+      <p>Creative Web Developer crafting modern and scalable web experiences.</p>
       <a href="#projects" class="btn">Explore My Work</a>
     </div>
   </section>
@@ -291,8 +318,8 @@
     <div class="about-content">
       <img src="https://via.placeholder.com/300x300" alt="Profile Photo" />
       <div class="about-text">
-        <p>I’m a web developer focused on crafting clean, user-friendly, and dynamic digital experiences.</p>
-        <p>I specialize in <strong>HTML, CSS, JavaScript, and React</strong>, building modern web apps that perform beautifully across devices.</p>
+        <p>I’m a web developer focused on building performant, responsive, and user-friendly digital experiences.</p>
+        <p>Proficient in <strong>HTML, CSS, JavaScript, React, and Node.js</strong>, I deliver maintainable code and elegant solutions.</p>
       </div>
     </div>
   </section>
@@ -304,21 +331,21 @@
         <img src="https://via.placeholder.com/400x250" alt="Project 1" />
         <div class="project-info">
           <h3>Portfolio Website</h3>
-          <p>Responsive portfolio with animations, dark/light mode, and custom design.</p>
+          <p>Responsive portfolio with animations, dark/light mode, and clean design.</p>
         </div>
       </div>
       <div class="project-card">
         <img src="https://via.placeholder.com/400x250" alt="Project 2" />
         <div class="project-info">
           <h3>Web App Dashboard</h3>
-          <p>Interactive admin panel using charts, tables, and REST API integration.</p>
+          <p>Admin panel using APIs, charts, and modern UX principles.</p>
         </div>
       </div>
       <div class="project-card">
         <img src="https://via.placeholder.com/400x250" alt="Project 3" />
         <div class="project-info">
           <h3>React Landing Page</h3>
-          <p>Elegant marketing landing page with component-based design.</p>
+          <p>Modern landing page with component-based architecture and reusable UI.</p>
         </div>
       </div>
     </div>
