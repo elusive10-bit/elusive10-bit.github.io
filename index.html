@@ -6,6 +6,7 @@
   <title>Your Name | Web Developer</title>
 
   <script src="https://kit.fontawesome.com/5da508da44.js" crossorigin="anonymous"></script>
+
   <!-- Professional Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
 
@@ -17,8 +18,15 @@
       --card: #fff;
       --nav: rgba(17, 17, 17, 0.9);
       --hero-gradient: linear-gradient(120deg, #00bcd4, #0077ff);
+
       --grid-line: rgba(0, 0, 0, 0.005);
       --grid-sub-line: rgba(0, 0, 0, 0.01);
+
+      /* Accessible link colors (LIGHT MODE) */
+      --link: #005fcc;
+      --link-hover: #0b8fff;
+      --link-active: #003f99;
+      --link-visited: #4b0082;
     }
 
     body.dark {
@@ -28,8 +36,15 @@
       --card: #161b22;
       --nav: rgba(22, 27, 34, 0.9);
       --hero-gradient: linear-gradient(120deg, #005f73, #0a9396);
+
       --grid-line: rgba(255, 255, 255, 0.025);
       --grid-sub-line: rgba(255, 255, 255, 0.01);
+
+      /* Accessible link colors (DARK MODE) */
+      --link: #4aa8ff;
+      --link-hover: #72c4ff;
+      --link-active: #1a76c9;
+      --link-visited: #9f7fff;
     }
 
     * {
@@ -46,7 +61,7 @@
       transition: background 0.5s, color 0.5s;
       line-height: 1.6;
 
-      /* Graph paper grid background */
+      /* Graph paper grid */
       background-image:
         linear-gradient(var(--grid-line) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
@@ -63,23 +78,35 @@
       letter-spacing: 0.6px;
     }
 
-    a:link {
-      color: var(--text);
+    /* ==============================
+       ACCESSIBLE LINK STYLES
+    =============================== */
+    a {
+      color: var(--link);
+      text-decoration: none;
+      transition: color 0.2s ease;
     }
 
     a:visited {
-      
+      color: var(--link-visited);
     }
-    
+
     a:hover {
-      
+      color: var(--link-hover);
     }
 
     a:active {
-      
+      color: var(--link-active);
     }
 
-    
+    /* Nav links stay white regardless of theme */
+    .nav-links a {
+      color: #fff !important;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary) !important;
+    }
 
     header {
       position: fixed;
@@ -117,17 +144,6 @@
 
     .nav-links li {
       margin-left: 25px;
-    }
-
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
     }
 
     .theme-toggle {
@@ -223,16 +239,6 @@
       align-items: center;
     }
 
-    .about-content img {
-      border-radius: 20px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s;
-    }
-
-    .about-content img:hover {
-      transform: scale(1.05);
-    }
-
     .about-text {
       max-width: 520px;
       font-size: 1.2rem;
@@ -258,11 +264,6 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
 
-    .project-card img {
-      width: 100%;
-      display: block;
-    }
-
     .project-info {
       padding: 20px;
     }
@@ -271,7 +272,6 @@
       max-width: 500px;
       margin: 50px auto 0;
       display: flex;
-      justify-content: left;
       flex-direction: column;
       gap: 10px;
     }
@@ -283,36 +283,22 @@
       border-radius: 10px;
       background: var(--card);
       color: var(--text);
-      font-family: "Source Sans Pro", sans-serif;
       margin-bottom: 10px;
     }
 
     footer {
       display: flex;
-      flex-direction: row;
-      justify-content: baseline;
-      /* text-align: center; */
+      justify-content: space-between;
       background: var(--nav);
       color: #fff;
       padding: 25px 30px;
       font-size: 0.95rem;
       letter-spacing: 0.2px;
+      flex-wrap: wrap;
     }
 
-    footer .contact-details {
-      display: flex row;
-      align-items: baseline;
-    }
-
-    .contact-details span {
+    footer .contact-details span {
       margin-right: 1.2em;
-    }
-
-    .copy {
-      display: flex;
-      flex-direction: row;
-      justify-content: right;
-      align-items: end;
     }
 
     @media (max-width: 768px) {
@@ -366,7 +352,6 @@
   <section id="about">
     <h2>About Me</h2>
     <div class="about-content">
-      <!-- <img src="https://via.placeholder.com/300x300" alt="Profile Photo" /> -->
       <div class="about-text">
         <p>I’m a web developer focused on building performant, responsive, and user-friendly digital experiences.</p>
         <p>Proficient in <strong>HTML, CSS, JavaScript, React, and Node.js</strong>, I deliver maintainable code and elegant solutions.</p>
@@ -378,14 +363,13 @@
     <h2>Featured Projects</h2>
     <div class="project-grid">
       <div class="project-card">
-        <!-- <img src="https://via.placeholder.com/400x250" alt="Project 1" /> -->
         <div class="project-info">
           <a href="/instrumentDND">
             <h3>Instrument Drag and Drop</h3>
-            <p>A simple project highlighting the use of Drag and Drop event in HTML, CSS and Javascript </p>
+            <p>A simple project highlighting the use of Drag and Drop event in HTML, CSS and Javascript</p>
           </a>
         </div>
-      </div>    
+      </div>
     </div>
   </section>
 
@@ -398,13 +382,13 @@
       <button type="submit" class="btn">Send Message</button>
     </form>
   </section>
+
   <footer>
     <div class="contact-details">
       <span><i class="fa-solid fa-envelope"></i> elishaparagasw@gmail.com</span>
       <span><i class="fa-solid fa-phone"></i> +63 960 427 3418</span>
-      <span><i class="fa-brands fa-square-linkedin"></i>www.linkedin.com/in/elishajamesparagas</span>
+      <span><i class="fa-brands fa-square-linkedin"></i> www.linkedin.com/in/elishajamesparagas</span>
     </div>
-
     <p class="copy">© 2025 Elisha James S. Paragas | Designed & Coded with 💙</p>
   </footer>
 
